@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: login-web-application
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/shopapp_db
+    username: root
+    password: 3306
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
+
+api:
+  prefix: /api/v1
+
+jwt:
+  valid-duration: 60
+  refresh_duration: 60
+  signer-key: tozUzuCtjmD1+2sEFUxUuVkBfOGQ4x6qwdx6beCP1k1K6ri01nZz8BMCCGIxnqV5
+
+open:
+  api:
+    title: API document
+    version: v1.0.0
+    description: Mota API service
+    serverUrl: http://localhost:8080
+    serverName: server test
