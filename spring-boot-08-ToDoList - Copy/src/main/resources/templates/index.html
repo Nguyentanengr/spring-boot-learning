@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/83c480ea6c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div class="bar-button">
+                <i class="fa-solid fa-bars fa-lg" style="color: #ffffff;"></i>
+            </div>
+            <h3 class="title">TO-DO LIST</h3>
+        </div>
+
+        <div id="content">
+
+            <div class="left-bar">
+                <ul class="option-list">
+                    <li class="option-item-all"><a href="/index">All my plans</a></li>
+                    <li class="option-item"><a href="/dealine">Nearing the dealine</a></li>
+                    <li class="option-item"><a href="/add">Add To-do</a></li>
+                    <li class="option-item"><a href="/help">Help center</a></li>
+                </ul>
+            </div>
+
+            <div class="todo-header-list">
+                <span class="title">Title</span>
+                <span class="description">Description</span>
+                <span class="dealine">Dealine</span>
+            </div>
+
+            <ul class="todo-list">
+                <li th:each="todo : ${list}" class="todo-item">
+                    <span th:text="*{todo.getTitle()}" class="title"></span>
+                    <span th:text="*{todo.getDescription()}" class="description"></span>
+                    <span th:text="*{todo.getDeadline()}" class="dealine"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const barButton = document.querySelector('.bar-button')
+        const leftBar = document.querySelector('.left-bar')
+        function showLeftBar() {
+            leftBar.classList.toggle('open')
+        }
+
+        barButton.addEventListener('click', showLeftBar)
+    </script>
+</body>
+</html>

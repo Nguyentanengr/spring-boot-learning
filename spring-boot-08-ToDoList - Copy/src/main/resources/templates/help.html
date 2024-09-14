@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help Center</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Can we help you?</h1>
+
+<ul>
+    <li th:each="info : ${helpersList}">
+        <span th:text="${info.titleHelp}"></span><br><br>
+        <span th:text="${info.descriptionHelp}"></span><br>
+        <p>Access to: <a th:href="@{${info.linkHelp}}" th:text="${info.linkHelp}"></a></p> <br>
+    </li>
+</ul>
+
+</body>
+</html>
+
+

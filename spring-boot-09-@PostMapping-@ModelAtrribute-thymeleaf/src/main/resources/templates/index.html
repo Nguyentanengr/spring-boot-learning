@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LODO To-do</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+    <script th:src="@{/js/bootstrap.js}"></script>
+
+</head>
+<body>
+
+<h1>Todo App</h1>
+
+<a th:href="@{/listToDo}" class="btn btn-primary">Xem danh sach</a>
+<a th:href="@{/addToDo}" class="btn btn-success">+ Them cong viec</a>
+
+</body>
+</html>
